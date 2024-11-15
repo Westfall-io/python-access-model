@@ -1,0 +1,45 @@
+## Main orbit params
+#a = (500+6378.14) * u.km
+#inc = 45 * u.deg
+## Walker params
+#sats = 10
+#planes = 10
+### Hardcoded f=0
+# Image params
+#max_resolution = 50 #m from requirement
+#pixel_pitch_micron = 0.0055 #mm
+#focal_length = 31.69 # cm
+# Targets
+#lats = [38.65, 45.28, 43.93, 45.60, 33.87]
+#lons = [-117.5, -114.2, -110.24, -112.79, -111.28]
+# Sim params
+#duration = 7*u.day
+#sim_step = 1*u.min
+
+# Assume all circular, regular orbits
+#ecc = 0 * u.one
+#argp = 0 * u.deg
+
+constellation:
+  sats: 10 #unitless
+  planes: 10 #unitless
+  orbit:
+    h: 500 #km
+    inc: 45 #deg
+    ecc: 0 #unitless
+    argp: 0 #deg
+    epoch: "2012-7-12 23:00:00"
+payload:
+  max_resolution: 50 #m
+  pixel_pitch_micron: 5.5 #micron
+  focal_length: 31.69 #cm
+scenario:
+  targets:
+    lats: [38.65, 45.28, 43.93, 45.60, 33.87] #deg
+    lons: [-117.5, -114.2, -110.24, -112.79, -111.28] #deg
+  duration: 7 #days
+  sim_step: 1 #min
+post_process:
+  run_access: False
+  access_per_day: True
+  max_gap: True
