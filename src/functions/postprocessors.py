@@ -31,12 +31,15 @@ def postprocess_apd(config, debug):
 
       o.append(np.average(v))
 
-    with open("accesses_per_day_targets_output.csv", 'w') as f:
+    with open("accesses_per_day_targets_all.csv", 'w') as f:
         for k,v in enumerate(o):
             if k==0:
                 f.write(str(v))
             else:
                 f.write(','+str(v))
+
+    with open("accesses_per_day_targets_output.csv", 'w') as f:
+        f.write(str(min(o)))
 
 def postprocess_maxgap(config, debug):
     print('Running max gap')
@@ -91,9 +94,12 @@ def postprocess_maxgap(config, debug):
         except NotImplementedError:
             pass
 
-    with open("max_gap_targets_output.csv", 'w') as f:
+    with open("max_gap_targets_all.csv", 'w') as f:
         for k,v in enumerate(o):
             if k==0:
                 f.write(str(v))
             else:
                 f.write(','+str(v))
+
+    with open("max_gap_targets_output.csv", 'w') as f:
+        f.write(str(max(o)))

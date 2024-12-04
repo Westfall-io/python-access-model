@@ -180,7 +180,7 @@ def make_accesses(config, orb, els, a_f, graze, debug):
 
         step = 0
         accesses = [0]*len(els)
-        a_tf = [-1, -1, -1, -1, -1]
+        a_tf = [-1]*len(els)
         while step < steps:
             #print('Sim Step: {}'.format(i))
             sat_now, sat_eci = propagate_orbit(sat_now, ss)

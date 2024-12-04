@@ -40,6 +40,6 @@ scenario:
   duration: 7 #days
   sim_step: 1 #min
 post_process:
-  run_access: False
+  run_access: True
   access_per_day: True
   max_gap: True
